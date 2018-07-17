@@ -48,10 +48,18 @@ namespace Airport.Controllers
     [HttpGet("/flights/{id}/all")]
     public ActionResult flights(int id)
     {
-    //  List<Flight> allFlight = Flight.GetAll();
       return View(Flight.FindFlightsByCity(id));
 
     }
+
+    [HttpPost("/flights/{id}/delete")]
+    public ActionResult DeleteNow(int id)
+{
+   Flight thisFlight = Flight.Find(id);
+   thisFlight.Delete();
+   return View("flights");
+//   return RedirectToAction("flights");
+}
 
   //   [HttpGet("/flights/{id}/all")]
   //   public ActionResult CreateFlightsByCity()

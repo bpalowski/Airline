@@ -9,6 +9,7 @@
 <h4>@flight.GetArriveId()</h4>
 <h4>@flight.GetStatus()</h4>
 <h4>@flight.GetId()</h4>
+<a href="/flights/@flight.GetDepartId()/delete">Delete</a>
 <br>
 }
-<a href='/flights/new'>Add Flight</a>
+<a href='/flights/@Model[0].GetDepartId()/new'>Add Flight</a>
